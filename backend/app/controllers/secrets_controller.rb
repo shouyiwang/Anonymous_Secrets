@@ -4,7 +4,7 @@ class SecretsController < ApplicationController
   # GET /secrets
   # GET /secrets.json
   def index
-    @secrets = Secret.all.reverse
+    @secrets = Secret.all.sample(100).reverse
   end
 
   # GET /secrets/1

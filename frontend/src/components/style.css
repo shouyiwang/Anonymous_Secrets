@@ -4,7 +4,47 @@
 
 .card {
   width: 250px;
+  max-height: 200px;
   border: 2px solid black;
   padding: 15px;
   margin: 15px;
+  overflow: hidden;
+}
+
+.card a {
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.card a:hover {
+  color: grey;
+}
+
+
+
+.bgcolor {
+  background-color: grey;
+}
+
+.nav {
+  background-color: #303030;
+  color: white;
+}
+
+div a {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-weight: bold;
+}
+
+#secretButton {
+  display: inline;
+  margin-top: 16px;
+  margin-left: 50px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+#secretButton:hover {
+  border: 2px solid white;
+  margin-top: 14px;
 }

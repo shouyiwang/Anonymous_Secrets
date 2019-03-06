@@ -7,7 +7,7 @@ class SecretCard extends Component {
   render() {
     return (
       <div className="card">
-        <Link to={`/secret_page/${this.props.secret.id}`}>{this.props.secret.content}</Link>
+        <Link to={`/secret_page/${this.props.secret.id}`}>{this.props.secret.content.slice(0, 150)}</Link>
 
         <br />
         likes: {this.props.secret.likes} &nbsp;

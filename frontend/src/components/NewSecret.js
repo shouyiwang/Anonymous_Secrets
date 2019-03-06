@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Navbar from './Navbar'
 
 const SECRET_URL = 'http://localhost:3000/secrets.json';
 
@@ -24,7 +25,7 @@ class NewSecret extends Component {
       category: 'normal',
       likes: 0,
       dislikes: 0
-    }); 
+    });
   }
 
   _handleChange(e) {
@@ -39,10 +40,13 @@ class NewSecret extends Component {
 
   render() {
     return (
-      <form onSubmit={ this._handleSubmit }>
-        <textarea onChange={ this._handleChange } value={ this.state.content }></textarea>
-        <input type="submit" value="Submit Your Secret" />
-      </form>
+      <div>
+        <Navbar />
+        <form onSubmit={ this._handleSubmit }>
+          <textarea onChange={ this._handleChange } value={ this.state.content }></textarea>
+          <input type="submit" value="Submit Your Secret" />
+        </form>
+      </div >
     );
   }
 }
