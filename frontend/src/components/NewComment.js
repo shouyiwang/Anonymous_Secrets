@@ -15,6 +15,8 @@ class NewComment extends Component {
 
   _handleSubmit(e) {
     e.preventDefault();
+    if(this.state.content.length === 0)  return;
+
     this.saveComment(this.state);
     this.setState({
       content: '',
@@ -35,8 +37,8 @@ class NewComment extends Component {
   render() {
     return (
       <form onSubmit={ this._handleSubmit }>
-        <textarea onChange={ this._handleChange } value={ this.state.content }></textarea>
-        <input type="submit" value="Submit Your Comment" />
+        <textarea onChange={ this._handleChange } placeholder="Your comment..." value={ this.state.content }></textarea>
+        <input type="submit" value="Post Comment" />
       </form>
     );
   }

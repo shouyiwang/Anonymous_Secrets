@@ -13,6 +13,7 @@ const Routes = (
       <Route exact path="/new_secret" component={ NewSecret } />
       <Route exact path="/about" component={ AboutPage } />
       <Route path="/secret_page/:id" component={ SecretPage } />
+      <Route path="/home/:category" component={ Home } />
     </div>
   </Router>
 );

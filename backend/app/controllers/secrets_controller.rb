@@ -4,7 +4,18 @@ class SecretsController < ApplicationController
   # GET /secrets
   # GET /secrets.json
   def index
-    @secrets = Secret.all.sample(100).reverse
+    if params[:category] == "all"
+      @secrets = Secret.all.reverse.take(300)
+    else
+      @secrets = Secret.all.where(category: params[:category]).reverse.take(300)
+    end
+
+    @secrets.each do |e|
+      if(e.content.length > 122)
+        e.content = e.content[0..120] + " ..."
+      end
+    end
+
   end
 
   # GET /secrets/1
