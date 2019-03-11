@@ -18,9 +18,18 @@ class SecretPanel extends Component {
   }
 
   fetchSecrets = () => {
+    //if no category is provided, such as localhost:3001, we'll display all secrets
+    let cat;
+    if (!this.props.category || this.props.category.length === 0) {
+      cat = "all";
+    }
+    else {
+      cat = this.props.category;
+    }
+
     axios.get(SECRET_URL, {
     params: {
-      category: this.props.category
+      category: cat
     }}).then( (results) => {
       this.setState({secrets: results.data});
     });

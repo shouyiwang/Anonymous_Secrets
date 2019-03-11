@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route , withRouter} from 'react-router-dom';
 import axios from 'axios';
 
 const COMMENT_URL = 'http://localhost:3000/comments.json';
@@ -11,6 +12,7 @@ class NewComment extends Component {
     };
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleChange = this._handleChange.bind(this);
+    this.saveComment = this.saveComment.bind(this);
   }
 
   _handleSubmit(e) {
@@ -30,6 +32,7 @@ class NewComment extends Component {
   saveComment({content}) {
     console.log(this.props.id);
     axios.post(COMMENT_URL, {content: content, secret_id: this.props.id}).then((results) => {
+      window.location.reload();
     });
   }
 

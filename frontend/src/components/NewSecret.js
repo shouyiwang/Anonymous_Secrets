@@ -59,6 +59,11 @@ class NewSecret extends Component {
 
   saveSecret({content, category, likes, dislikes}) {
     axios.post(SECRET_URL, {content: content, category: category, likes: likes, dislikes: dislikes}).then((results) => {
+      let that = this;
+      setTimeout(function () {
+        that.props.history.push("/");
+      }, 1000);
+
     });
   }
 
